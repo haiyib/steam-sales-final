@@ -26,9 +26,10 @@ jobs:
       with:
         python-version: '3.11'
     - name: Install all necessary packages
-      run: pip install jupyter lxml pandas requests beautifulsoup4 html5lib
-    - name: Debug notebook file
       run: |
+        pip install jupyter lxml pandas requests beautifulsoup4 html5lib playwright nest_asyncio pillow
+        playwright install firefox      
+    - run: |
         echo "Working directory:"
         pwd
         echo "Files in repo:"
